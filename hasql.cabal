@@ -107,6 +107,8 @@ library
     Hasql.Pipeline
     Hasql.Session
     Hasql.Statement
+    Hasql.Encoders.Params
+    Hasql.Encoders.All
 
   other-modules:
     Hasql.Commands
@@ -121,9 +123,7 @@ library
     Hasql.Decoders.Results
     Hasql.Decoders.Row
     Hasql.Decoders.Value
-    Hasql.Encoders.All
     Hasql.Encoders.Array
-    Hasql.Encoders.Params
     Hasql.Encoders.Value
     Hasql.Errors
     Hasql.IO
