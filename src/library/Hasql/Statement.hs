@@ -4,6 +4,7 @@ module Hasql.Statement
     unpreparable,
     refineResult,
     toSql,
+    toPrinter,
 
     -- * Recipes
 

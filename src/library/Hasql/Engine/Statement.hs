@@ -4,6 +4,7 @@ module Hasql.Engine.Statement
     unpreparable,
     refineResult,
     toSql,
+    toPrinter,
     compilePreparedStatementData,
     compileUnpreparedStatementData,
   )
@@ -149,6 +150,10 @@ refineResult refiner stmt = stmt {decoder = fmap (ResultDecoder.refine refiner) 
 -- | Extract the SQL template from a statement.
 toSql :: Statement params result -> Text
 toSql stmt = decodeUtf8Lenient (sql stmt)
+
+-- | Extract the params printer from a statement.
+toPrinter :: Statement params result -> params -> [Text]
+toPrinter stmt = printer stmt
 
 -- | Compile prepared-statement data: resolve OIDs and pair encoded values with their format flags.
 compilePreparedStatementData ::
